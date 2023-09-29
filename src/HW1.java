@@ -17,7 +17,7 @@ public class HW1 {
     public static double[] xintYint(double m, double b) {
         return new double[] {(0 - b) / m, b};
     }
-    //returns both zeroes
+    //returns {zero1, zero2}
     public static double[] quadraticFormula(double a, double b, double c) {
         double sqrtPortion = Math.sqrt(Math.pow(b, 2) - (4*a*c));
         return new double[] {(-b + sqrtPortion) / (2 * a), (-b - sqrtPortion) / (2 * a)};
