@@ -1,13 +1,17 @@
 package offtopic;
 
 public class References {
-    public static final String[] masterList = {"gastar", "comprender", "ir", "repetir", "dormir"};
-    public static final String[] arVerbs = {"gastar"};
-    public static final String[] erVerbs = {"comprender"};
-    public static final String[] irVerbs = {"repetir"};
-    public static final String[] irregs = {"repetir", "dormir", "ir"};
-    public static final String[] eToI = {"repetir"};
-    public static final String[] oToU = {"dormir"};
+    public static final String[] masterList = {"acabar de", "acampar", "andar", "ayudar", "bailar", "bucear", "buscar", "calificar", "cambiar", "caminar", "cantar", "cenar", "cocinar", "comprar", "contestar", "confirmar", "conversar", "cuidar", "desayunar", "descansar", "desear", "dibujar", "enseñar", "entrar", "escalar", "escuchar", "esperar", "esquiar", "estudiar", "explicar", "ganar", "gastar", "gustar", "hablar", "invitar", "lavar", "limpiar", "llamar", "llegar", "llevar", "mandar", "manejar", "mirar", "nadar", "necesitar", "pagar", "pasear", "patinar", "pintar", "planchar", "practicar", "regatear", "regresar", "sacar", "terminar", "tocar", "tomar", "trabajar", "usar", "viajar", "visitar", "aprender", "beber", "comer", "comprender", "correr", "creer", "deber", "leer", "vender", "ver", "abrir", "asistir", "compartir", "decidir", "describir", "escribir", "recibir", "subir", "vivir", "ser", "estar", "dar", "ir", "caer", "hacer", "poner", "suponer", "tener", "traer", "oír", "salir", "venir", "saber", "aparecer", "conocer", "desaparecer", "ofrecer", "parecer", "conducir", "traducir", "cerrar", "comenzar", "empezar", "merendar", "nevar", "pensar", "recomendar", "entender", "perder", "querer", "preferir", "almorzar", "contar", "costar", "encontrar", "jugar", "llover", "mostrar", "recorder", "poder", "dormir", "morir", "conseguir", "decir", "pedir", "repetir", "reír", "seguir", "sonreír"};
+    public static final String[] arVerbs = {"acabar de", "acampar", "almorzar", "andar", "ayudar", "bailar", "bucear", "buscar", "calificar", "cambiar", "caminar", "cantar", "cenar", "cocinar", "comenzar", "comprar", "contar", "costar", "contestar", "confirmar", "conversar", "cuidar", "desayunar", "descansar", "desear", "dibujar", "empezar", "enseñar", "entrar", "escalar", "escuchar", "esperar", "esquiar", "estudiar", "explicar", "encontrar", "ganar", "gastar", "gustar", "hablar", "invitar", "jugar", "lavar", "limpiar", "llamar", "llegar", "llevar", "mandar", "manejar", "mirar", "nadar", "necesitar", "pagar", "pasear", "patinar", "pintar", "planchar", "practicar", "regatear", "regresar", "sacar", "terminar", "tocar", "tomar", "trabajar", "usar", "viajar", "visitar"};
+    public static final String[] erVerbs = {"aprender", "beber", "comer", "comprender", "correr", "creer", "deber", "leer", "vender", "ver", "ser", "caer", "hacer", "poner", "suponer", "tener", "traer", "saber", "aparecer", "conocer", "desaparecer", "ofrecer", "parecer", "entender", "perder", "querer", "llover", "recorder", "poder"};
+    public static final String[] irVerbs = {"abrir", "asistir", "compartir", "decidir", "describir", "escribir", "recibir", "subir", "vivir", "ir", "salir", "venir", "conducir", "traducir", "preferir", "dormir", "morir", "conseguir", "decir", "pedir", "repetir", "reír", "seguir", "sonreír"};
+    public static final String[] trulyIrregs = {"decir", "hacer", "poner", "estar", "tener", "poder"};
+    public static final String[] car = {"buscar", "calificar", "explicar", "practicar", "sacar", "tocar"};
+    public static final String[] gar = {"llegar", "pagar", "jugar"};
+    public static final String[] zar = {"comenzar", "empezar", "almorzar"};
+    public static final String[] eToI = {"preferir", "conseguir", "decir", "pedir", "repetir", "reír", "seguir", "sonreír"};
+    public static final String[] oToU = {"dormir", "morir"};
+    public static final String[] iToY = {"caer", "leer", "creer", "oír"};
     public static final String[] serIr = {"fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"};
     public static final String[] arEndings = {"é", "aste", "ó", "amos", "asteis", "aron"};
     public static final String[] erIrEndings = {"í", "iste", "ió", "imos", "isteis", "ieron"};
