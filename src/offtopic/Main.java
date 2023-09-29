@@ -1,72 +1,77 @@
 package offtopic;
 
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 public class Main {
     public static int subject = 0;
+    static String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
+    static int correct = 0;
+    static int total = 0;
+    //stops prgm from rolling subject indefinitely. there are absolutely better ways to do this
+    static boolean badSolution = true;
     public static void main(String[] args) {
-        boolean loop = true;
-        Scanner scanner = new Scanner(System.in);
-        int total = 0;
-        int correct = 0;
-        while (loop) {
-            String subjectString = "";
-            subject = (int) (Math.random() * (5 - 0) + 0);
-            switch (subject) {
-                case 0:
-                    subjectString = "yo";
-                    break;
-                case 1:
-                    subjectString = "tú";
-                    break;
-                case 2:
-                    subjectString = "él/ella/usted";
-                    break;
-                case 3:
-                    subjectString = "nosotros";
-                    break;
-                case 4:
-                    subjectString = "vosotros";
-                    break;
-                case 5:
-                    subjectString = "ellos/ellas/ustedes";
-                    break;
+        JFrame frame = new JFrame("Preterite Practice");
+        SwingFrame.setUpFrame(frame);
+        frame.setVisible(true);
+        while (true) {
+            System.out.println("");
+            if (badSolution) {
+                verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
+                String subjectString = "";
+                subject = (int) (Math.random() * (6 - 0) + 0);
+                switch (subject) {
+                    case 0:
+                        subjectString = "yo";
+                        break;
+                    case 1:
+                        subjectString = "tú";
+                        break;
+                    case 2:
+                        subjectString = "él/ella/usted";
+                        break;
+                    case 3:
+                        subjectString = "nosotros";
+                        break;
+                    case 4:
+                        subjectString = "vosotros";
+                        break;
+                    case 5:
+                        subjectString = "ellos/ellas/ustedes";
+                        break;
+                }
+                SwingFrame.verbText.setText(verb);
+                SwingFrame.subjectText.setText(subjectString);
+                badSolution = false;
+                System.out.println(badSolution);
             }
-            String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
-            System.out.println("Conjugate " + verb + " in " + subjectString);
-            String answer = scanner.next();
-            if (answer.equals("quit")) {
-                System.out.println("Score: " + correct + "/" + total);
-                System.exit(0);
-            } else if (!answer.equals(Sectioning.attachEnding(verb))) {
-                System.out.println("Incorrect");
-                ++total;
-                System.out.println("The correct answer was: " + Sectioning.attachEnding(verb));
-                System.out.println("Score: " + correct + "/" + total);
-            } else {
-                System.out.println("Correct");
+        }
+    }
+    static Action buttonAction = new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JButton clickedButton = (JButton) e.getSource();
+            SwingFrame.answerBox.setText(SwingFrame.answerBox.getText() + clickedButton.getText());
+        }
+    };
+    static Action textAction = new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JTextField actionedField = (JTextField) e.getSource();
+            if (actionedField.getText().equals(Sectioning.attachEnding(verb))) {
                 ++total;
                 ++correct;
-                System.out.println("Score: " + correct + "/" + total);
+                SwingFrame.score.setText(correct + "/" + total);
+                SwingFrame.correct.setText("");
+                SwingFrame.correct.setText("Correct");
+                SwingFrame.answerBox.setText("");
+            } else {
+                ++total;
+                SwingFrame.score.setText(correct + "/" + total);
+                SwingFrame.correct.setText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb));
+                SwingFrame.answerBox.setText("");
             }
-            /*
-            á
-            é
-            í
-            ó
-            ú
-        */
+            Main.badSolution = true;
+            System.out.println("badSolution in listener: " + badSolution);
         }
-        /*
-        for (int i=0; i<=3; i++) {
-            subject = (int) (Math.random() * (5 - 0) + 0);
-            String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
-            System.out.println(verb);
-            System.out.println("verb type: " + Sectioning.getVerbEnding(verb));
-            System.out.println("verb stem: " + Sectioning.getVerbStem(verb));
-            System.out.println("subject: " + subject);
-            System.out.println("completed verb??: " + Sectioning.attachEnding(verb));
-            System.out.println("---");
-        }
-         */
-    }
+    };
 }

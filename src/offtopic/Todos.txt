@@ -1,6 +1,4 @@
-1. stem changers (only ir) in Sectioning.getVerbStem()
-2. ver and dar (Sectioning.attachEnding())
-3. ser and ir (Sectioning.attachEnding())
-5. dijeron (Sectioning.attachEnding())
-4. reir and sonreir (accents and weird 3rd person included) (Sectioning.attachEnding())
-5. make this a swing app
+1. the weird stuff with -cir verbs in 1s (like traducir -> tradujo)
+2. check to make sure that stem changers work
+3. technically i should use a layout but i dont care
+4. global variables should technically be methods (like getter and setter or a method that clears text) but i dont care
