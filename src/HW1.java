@@ -1,4 +1,4 @@
-public class Hw1 {
+public class HW1 {
     public static void main(String[] args) {
         System.out.println("Trapezoid area: " + trapezoid(16, 7, 8));
         System.out.println("There are " + secondsToMinutesAndSeconds(1678)[0] + " minutes and " + secondsToMinutesAndSeconds(1678)[1] + " seconds in 1678 seconds");
