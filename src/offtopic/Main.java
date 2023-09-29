@@ -13,22 +13,22 @@ public class Main {
             subject = (int) (Math.random() * (5 - 0) + 0);
             switch (subject) {
                 case 0:
-                    subjectString = "1s";
+                    subjectString = "yo";
                     break;
                 case 1:
-                    subjectString = "2s";
+                    subjectString = "tú";
                     break;
                 case 2:
-                    subjectString = "3s";
+                    subjectString = "él/ella/usted";
                     break;
                 case 3:
-                    subjectString = "1p";
+                    subjectString = "nosotros";
                     break;
                 case 4:
-                    subjectString = "2p";
+                    subjectString = "vosotros";
                     break;
                 case 5:
-                    subjectString = "3p";
+                    subjectString = "ellos/ellas/ustedes";
                     break;
             }
             String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
