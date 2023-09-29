@@ -1,5 +1,6 @@
 1. stem changers (only ir) in Sectioning.getVerbStem()
-2. ver and dar
-3. ser and ir
-4. reir and sonreir (accents and weird 3rd person included)
+2. ver and dar (Sectioning.attachEnding())
+3. ser and ir (Sectioning.attachEnding())
+5. dijeron (Sectioning.attachEnding())
+4. reir and sonreir (accents and weird 3rd person included) (Sectioning.attachEnding())
 5. make this a swing app
