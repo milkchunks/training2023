@@ -2,6 +2,8 @@ package offtopic;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Main {
     public static int subject = 0;
     static String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
@@ -53,25 +55,30 @@ public class Main {
             SwingFrame.answerBox.setText(SwingFrame.answerBox.getText() + clickedButton.getText());
         }
     };
-    static Action textAction = new AbstractAction() {
+    static ActionListener textAction = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JTextField actionedField = (JTextField) e.getSource();
-            if (actionedField.getText().equals(Sectioning.attachEnding(verb))) {
-                ++total;
-                ++correct;
-                SwingFrame.score.setText(correct + "/" + total);
-                SwingFrame.correct.setText("");
-                SwingFrame.correct.setText("Correct");
-                SwingFrame.answerBox.setText("");
-            } else {
-                ++total;
-                SwingFrame.score.setText(correct + "/" + total);
-                SwingFrame.correct.setText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb));
-                SwingFrame.answerBox.setText("");
+            if (e.getSource() instanceof JTextField) {
+                JTextField actionedField = (JTextField) e.getSource();
+                if (actionedField.getText().equals(Sectioning.attachEnding(verb))) {
+                    ++total;
+                    ++correct;
+                    SwingFrame.score.setText(correct + "/" + total);
+                    SwingFrame.correct.setText("");
+                    SwingFrame.correct.setText("Correct");
+                    SwingFrame.answerBox.setText("");
+                } else {
+                    ++total;
+                    SwingFrame.score.setText(correct + "/" + total);
+                    SwingFrame.correct.setText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb));
+                    SwingFrame.answerBox.setText("");
+                }
+                Main.badSolution = true;
+                System.out.println("badSolution in listener: " + badSolution);
+            } else if (e.getSource() instanceof JButton) {
+                JButton clickedButton = (JButton) e.getSource();
+                SwingFrame.answerBox.setText(SwingFrame.answerBox.getText() + clickedButton.getText());
             }
-            Main.badSolution = true;
-            System.out.println("badSolution in listener: " + badSolution);
         }
     };
 }

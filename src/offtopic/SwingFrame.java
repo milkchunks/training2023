@@ -16,7 +16,7 @@ public class SwingFrame {
             JButton accent = new JButton(accents[i]);
             accent.setMargin(new Insets(0, 0, 0, 0));
             accent.setBounds(127 + (i * 30), 250, 25, 25);
-            accent.addActionListener(new Main());
+            accent.addActionListener(Main.textAction);
             frame.add(accent);
         }
         title.setFont(new Font("SansSerif", Font.BOLD, 18));
@@ -25,7 +25,7 @@ public class SwingFrame {
         title.setName("title");
         title.setHorizontalAlignment(JTextField.CENTER);
         answerBox.setBounds(100, 200, 200, 50);
-        answerBox.addActionListener(new Main());
+        answerBox.addActionListener(Main.textAction);
         verbText.setEditable(false);
         verbText.setBounds(125, 132, 150, 30);
         subjectText.setBounds(125, 162, 150, 30);
