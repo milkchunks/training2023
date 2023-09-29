@@ -49,9 +49,11 @@ public class Main {
                 System.out.println("Score: " + correct + "/" + total);
             }
             /*
-            ó
+            á
             é
             í
+            ó
+            ú
         */
         }
         /*
