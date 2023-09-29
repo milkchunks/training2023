@@ -1,22 +1,25 @@
 public class Hw1 {
     public static void main(String[] args) {
-        double a = 16;
-        //trapezoid base
-        double b = 7;
-        double h = 8;
-        System.out.println("Trapezoid area = " + ((a + b) / 2) * h);
-        System.out.println("There are " + Math.floor(1678 / 60) + " minutes and " + 1678 % 60 + " seconds in 1678 seconds");
-        double m = 2;
-        //b value in y = mx+b
-        double b2 = 4;
-        //(y-b)/m = x, xint is when y = 0
-        System.out.println("y-int = " + b2 + ", x-int = " + (0 - b2) / m);
-        //TODO use quadratic equation to find zeroes
-        double qa = 3;
-        double qb = 8;
-        double qc = 4;
-        double zero1 = (-qb + Math.sqrt(Math.pow(qb, 2) - (4*qa*qc))) / (2 * qa);
-        double zero2 = (-qb - Math.sqrt(Math.pow(qb, 2) - (4*qa*qc))) / (2 * qa);
-        System.out.println("Zeroes: " + zero1 + ", " + zero2);
+        System.out.println("Trapezoid area: " + trapezoid(16, 7, 8));
+        System.out.println("There are " + secondsToMinutesAndSeconds(1678)[0] + " minutes and " + secondsToMinutesAndSeconds(1678)[1] + " seconds in 1678 seconds");
+        System.out.println("x-int: " + xintYint(2, 4)[0] + ", y-int: " + xintYint(2, 4)[1]);
+        System.out.println("Zeroes: " + quadraticFormula(3, 8, 4)[0] + ", " + quadraticFormula(3, 8, 4)[1]);
+    }
+    //returns area
+    public static double trapezoid(double a, double b, double h) {
+        return ((a + b) / 2) * h;
+    }
+    //returns {minutes, seconds}
+    public static double[] secondsToMinutesAndSeconds(double seconds) {
+        return new double[] {Math.floor(seconds / 60), seconds % 60};
+    }
+    //returns {x int, y int}
+    public static double[] xintYint(double m, double b) {
+        return new double[] {(0 - b) / m, b};
+    }
+    //returns both zeroes
+    public static double[] quadraticFormula(double a, double b, double c) {
+        double sqrtPortion = Math.sqrt(Math.pow(b, 2) - (4*a*c));
+        return new double[] {(-b + sqrtPortion) / (2 * a), (-b - sqrtPortion) / (2 * a)};
     }
 }
