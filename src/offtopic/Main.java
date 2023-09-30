@@ -16,6 +16,7 @@ public class Main {
         SwingFrame.setUpFrame(frame);
         frame.setVisible(true);
         while (true) {
+            //TODO find a way to not have to do this print statement
             System.out.println("");
             if (badSolution) {
                 verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
@@ -48,13 +49,6 @@ public class Main {
             }
         }
     }
-    static Action buttonAction = new AbstractAction() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JButton clickedButton = (JButton) e.getSource();
-            SwingFrame.answerBox.setText(SwingFrame.answerBox.getText() + clickedButton.getText());
-        }
-    };
     static ActionListener textAction = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {

@@ -10,6 +10,10 @@ import java.util.Arrays;
  */
 public class Sectioning {
     /**
+     * @param verb the verb that you are taking the last three letters of
+     * @return last three letters of the verb
+     */
+    /**
      * @param verb the verb that you are grabbing the stem from
      * @return the verb stem
      */
@@ -33,6 +37,10 @@ public class Sectioning {
                     return "tuv";
                 case "estar":
                     return "estuv";
+                case "traducir":
+                    return "traduj";
+                case "traer":
+                    return "traj";
                 default:
                     return "how the hell";
             }
@@ -68,22 +76,22 @@ public class Sectioning {
         //stem changers
         if (Arrays.asList(References.eToI).contains(verb) && (Main.subject == 2 || Main.subject == 5)) {
             sb.replace(sb.lastIndexOf("e"), sb.lastIndexOf("e") + 1, "i");
-            return sb.toString() + References.erIrEndings[Main.subject];
+            return sb + References.erIrEndings[Main.subject];
         } else if (Arrays.asList(References.oToU).contains(verb) && (Main.subject == 2 || Main.subject == 5)) {
             sb.replace(sb.lastIndexOf("o"), sb.lastIndexOf("o") + 1, "u");
-            return sb.toString() + References.erIrEndings[Main.subject];
+            return sb + References.erIrEndings[Main.subject];
         }
-        if (Arrays.asList(References.arVerbs).contains(verb)) {
+        if (verb.endsWith("ar")) {
             //if verb is car gar zar, then use stringbuilder to delete the c/g/z, then attach the correct ending if the subject if 1s
-            if (Arrays.asList(References.car).contains(verb)) {
+            if (verb.endsWith("car")) {
                 sb.deleteCharAt(sb.length() - 1);
-                return (Main.subject == 0 ? sb.toString() + "qué" : getVerbStem(verb) + References.arEndings[Main.subject]);
-            } else if (Arrays.asList(References.gar).contains(verb)) {
+                return (Main.subject == 0 ? sb + "qué" : getVerbStem(verb) + References.arEndings[Main.subject]);
+            } else if (verb.endsWith("gar")) {
                 sb.deleteCharAt(sb.length() - 1);
-                return (Main.subject == 0 ? sb.toString() + "gué" : getVerbStem(verb) + References.arEndings[Main.subject]);
-            } else if (Arrays.asList(References.zar).contains(verb)) {
+                return (Main.subject == 0 ? sb + "gué" : getVerbStem(verb) + References.arEndings[Main.subject]);
+            } else if (verb.endsWith("zar")) {
                 sb.deleteCharAt(sb.length() - 1);
-                return (Main.subject == 0 ? sb.toString() + "cé" : getVerbStem(verb) + References.arEndings[Main.subject]);
+                return (Main.subject == 0 ? sb + "cé" : getVerbStem(verb) + References.arEndings[Main.subject]);
             } else {
                 return getVerbStem(verb) + References.arEndings[Main.subject];
             }
@@ -96,8 +104,12 @@ public class Sectioning {
                 return getVerbStem(verb) + References.accentedIrEndings[Main.subject];
             }
         } else if (Arrays.asList(References.trulyIrregs).contains(verb)) {
+            //-cir verbs and traer
+            if (verb.endsWith("cir") || verb.equals("traer") || getVerbStem(verb).endsWith("j")) {
+                return (Main.subject == 5 ? getVerbStem(verb) + "eron" : getVerbStem(verb) + References.irregularEndings[Main.subject]);
+            }
             return getVerbStem(verb) + References.irregularEndings[Main.subject];
-        } else if (Arrays.asList(References.erVerbs).contains(verb) || Arrays.asList(References.irVerbs).contains(verb)) {
+        } else if (verb.endsWith("er") || verb.endsWith("ir")) {
             return getVerbStem(verb) + References.erIrEndings[Main.subject];
         }
         return "how the hell";

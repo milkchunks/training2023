@@ -1,5 +1,5 @@
-1. the weird stuff with -cir verbs in 1s (like traducir -> tradujo)
 2. check to make sure that stem changers work
 3. technically i should use a layout but i dont care
 4. global variables should technically be methods (like getter and setter or a method that clears text) but i don't care
 5. use two action listeners, one for button and one for answer box. also implement in a way that doesn't suck
+6. get rid of print statement bandaid
