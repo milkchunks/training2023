@@ -1,3 +1,4 @@
+1. add -cir verbs to truly irregular (and edit switch statement in Sectioning.getVerbStem() to change all -cir verb stems to c->j
 2. check to make sure that stem changers work
 3. technically i should use a layout but i dont care
 4. global variables should technically be methods (like getter and setter or a method that clears text) but i don't care
