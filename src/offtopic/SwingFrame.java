@@ -2,6 +2,9 @@ package offtopic;
 
 import javax.swing.*;
 import java.awt.*;
+/*
+    A file to set up the JFrame
+ */
 
 public class SwingFrame {
     static JTextField verbText = new JTextField("temp1");
@@ -9,6 +12,11 @@ public class SwingFrame {
     static JTextField answerBox = new JTextField();
     static JTextField correct = new JTextField();
     static JTextField score = new JTextField("0/0");
+
+    /**
+     * @param frame the frame to be set up
+     * @return set up frame
+     */
     public static void setUpFrame(JFrame frame) {
         JTextField title = new JTextField("Preterite Practice");
         String[] accents = {"á", "é", "í", "ó", "ú"};

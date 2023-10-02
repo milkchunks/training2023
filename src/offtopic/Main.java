@@ -9,7 +9,6 @@ public class Main {
     static String verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
     static int correct = 0;
     static int total = 0;
-    //stops prgm from rolling subject indefinitely. there are absolutely better ways to do this
     static boolean badSolution = true;
     public static void main(String[] args) {
         JFrame frame = new JFrame("Preterite Practice");
