@@ -16,7 +16,7 @@ public class SwingFrame {
             JButton accent = new JButton(accents[i]);
             accent.setMargin(new Insets(0, 0, 0, 0));
             accent.setBounds(127 + (i * 30), 250, 25, 25);
-            accent.addActionListener(Main.textAction);
+            accent.addActionListener(Main.buttonAction);
             frame.add(accent);
         }
         title.setFont(new Font("SansSerif", Font.BOLD, 18));
