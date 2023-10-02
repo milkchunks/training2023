@@ -22,6 +22,9 @@ public class Sectioning {
         sb.deleteCharAt(verb.length() - 1);
         sb.deleteCharAt(verb.length() - 2);
         if (Arrays.asList(References.trulyIrregs).contains(verb)) {
+            if (verb.endsWith("cir")) {
+                sb.replace(sb.length() - 1, sb.length(), "j");
+            }
             switch (verb) {
                 case "decir":
                     return "dij";
@@ -37,8 +40,6 @@ public class Sectioning {
                     return "tuv";
                 case "estar":
                     return "estuv";
-                case "traducir":
-                    return "traduj";
                 case "traer":
                     return "traj";
                 default:

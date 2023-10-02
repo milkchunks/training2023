@@ -16,9 +16,9 @@ public class Main {
         SwingFrame.setUpFrame(frame);
         frame.setVisible(true);
         while (true) {
-            //TODO find a way to not have to do this print statement
-            //System.out.println("");
-            if (badSolution) {
+            //this gets rid of thread starvation but idk what that is or why it's a problem
+            Thread.currentThread().yield();
+            if (getBS()) {
                 verb = References.masterList[(int) (Math.random() * (References.masterList.length - 0) + 0)];
                 String subjectString = "";
                 subject = (int) (Math.random() * (6 - 0) + 0);
@@ -44,8 +44,7 @@ public class Main {
                 }
                 SwingFrame.verbText.setText(verb);
                 SwingFrame.subjectText.setText(subjectString);
-                badSolution = false;
-                System.out.println(badSolution);
+                setBS(false);
             }
         }
     }
@@ -74,7 +73,13 @@ public class Main {
                 SwingFrame.correct.setText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb));
                 SwingFrame.answerBox.setText("");
             }
-            badSolution = true;
+            setBS(true);
         }
     };
+    public static void setBS(boolean tf) {
+        badSolution = tf;
+    }
+    public static boolean getBS() {
+        return badSolution;
+    }
 }
