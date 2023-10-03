@@ -1,4 +1,4 @@
-package ontopic;
+package ontopic.week1;
 
 import java.util.Scanner;
 public class Trapezoid {
@@ -21,7 +21,7 @@ public class Trapezoid {
             double a = scanner.nextDouble();
             System.out.println("Input height");
             double height = scanner.nextDouble();
-            System.out.println(findAValue(area, a, height));
+            System.out.println(findBValue(area, a, height));
         } else if (choice.equals("h")) {
             System.out.println("Input area");
             double area = scanner.nextDouble();
@@ -29,7 +29,7 @@ public class Trapezoid {
             double a = scanner.nextDouble();
             System.out.println("Input 'b' value");
             double b = scanner.nextDouble();
-            System.out.println(findAValue(area, a, b));
+            System.out.println(findHeight(area, a, b));
         }
     }
     public static double findAValue(double area, double b, double height) {
