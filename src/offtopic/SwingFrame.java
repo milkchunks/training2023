@@ -19,11 +19,12 @@ public class SwingFrame {
      */
     public static void setUpFrame(JFrame frame) {
         JTextField title = new JTextField("Preterite Practice");
-        String[] accents = {"á", "é", "í", "ó", "ú"};
-        for (int i=0;i<=4;i++) {
+        String[] accents = {"á", "é", "í", "ó", "ú", "ñ"};
+        for (int i=0;i<=5;i++) {
             JButton accent = new JButton(accents[i]);
             accent.setMargin(new Insets(0, 0, 0, 0));
-            accent.setBounds(127 + (i * 30), 250, 25, 25);
+            //127-12
+            accent.setBounds(112 + (i * 30), 250, 25, 25);
             accent.addActionListener(Main.buttonAction);
             frame.add(accent);
         }
