@@ -2,7 +2,7 @@ package ontopic;
 
 public class HW1 {
     public static void main(String[] args) {
-        System.out.println("ontopic.Trapezoid area: " + trapezoid(16, 7, 8));
+        System.out.println("Trapezoid area: " + trapezoid(16, 7, 8));
         System.out.println("There are " + secondsToMinutesAndSeconds(1678)[0] + " minutes and " + secondsToMinutesAndSeconds(1678)[1] + " seconds in 1678 seconds");
         System.out.println("x-int: " + xintYint(2, 4)[0] + ", y-int: " + xintYint(2, 4)[1]);
         System.out.println("Zeroes: " + quadraticFormula(3, 8, 4)[0] + ", " + quadraticFormula(3, 8, 4)[1]);
