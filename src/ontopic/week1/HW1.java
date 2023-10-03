@@ -17,7 +17,7 @@ public class HW1 {
     }
     //returns {x int, y int}
     public static double[] xintYint(double m, double b) {
-        return new double[] {(0 - b) / m, b};
+        return new double[] {-b / m, b};
     }
     //returns {zero1, zero2}
     public static double[] quadraticFormula(double a, double b, double c) {
