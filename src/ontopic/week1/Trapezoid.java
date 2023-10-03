@@ -31,6 +31,7 @@ public class Trapezoid {
             double b = scanner.nextDouble();
             System.out.println(findHeight(area, a, b));
         }
+        scanner.close();
     }
     public static double findAValue(double area, double b, double height) {
         return 2 * (area - height) - b;
