@@ -11,8 +11,7 @@ public class Main {
     static int total = 0;
     static boolean badSolution = true;
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Preterite Practice");
-        SwingFrame.setUpFrame(frame);
+        JFrame frame = SwingFrame.setUpFrame();
         frame.setVisible(true);
         while (true) {
             //this gets rid of thread starvation but idk what that is or why it's a problem
@@ -41,8 +40,8 @@ public class Main {
                         subjectString = "ellos/ellas/ustedes";
                         break;
                 }
-                SwingFrame.verbText.setText(verb);
-                SwingFrame.subjectText.setText(subjectString);
+                SwingFrame.setVerbText(verb);
+                SwingFrame.setSubjectText(subjectString);
                 setBS(false);
             }
         }
@@ -52,7 +51,7 @@ public class Main {
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton pressedButton = (JButton) e.getSource();
-            SwingFrame.answerBox.setText(SwingFrame.answerBox.getText() + pressedButton.getText());
+            SwingFrame.setAnswerBoxText(SwingFrame.getAnswerBoxText() + pressedButton.getText());
         }
     };
     static ActionListener textAction = new ActionListener() {
@@ -62,15 +61,15 @@ public class Main {
             if (actionedField.getText().equals(Sectioning.attachEnding(verb))) {
                 ++total;
                 ++correct;
-                SwingFrame.score.setText(correct + "/" + total);
-                SwingFrame.correct.setText("");
-                SwingFrame.correct.setText("Correct");
-                SwingFrame.answerBox.setText("");
+                SwingFrame.setScoreText(correct + "/" + total);
+                SwingFrame.setCorrectText("Correct");
+                SwingFrame.setAnswerBoxText("");
             } else {
                 ++total;
-                SwingFrame.score.setText(correct + "/" + total);
-                SwingFrame.correct.setText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb));
-                SwingFrame.answerBox.setText("");
+                SwingFrame.setScoreText(correct + "/" + total);
+                SwingFrame.setCorrectText("Incorrect. Correct answer: " + Sectioning.attachEnding(verb) + "\n");
+                SwingFrame.correct.append("Type correct answer to move on");
+                SwingFrame.setAnswerBoxText("");
             }
             setBS(true);
         }
