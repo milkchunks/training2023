@@ -10,5 +10,17 @@ public class Conditionals {
         } else {
             System.out.println("impossible");
         }
+        String s = "string";
+        switch (s) {
+            case "hello":
+                System.out.println(s);
+                break;
+            case "string":
+                System.out.println(s + ".");
+                break;
+            default:
+                System.out.println("none matched");
+                break;
+        }
     }
 }

@@ -55,5 +55,6 @@ public class SwingFrame {
         //5:4
         frame.setBounds(0, 0, 400, 500);
         frame.setResizable(false);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
