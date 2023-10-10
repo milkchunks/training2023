@@ -7,7 +7,6 @@ public class Account {
         this.holderName = holderName;
         this.accountID = accountID;
     }
-
     public String getHolderName() {
         return holderName;
     }

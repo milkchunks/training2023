@@ -1,5 +1,8 @@
 package ontopic.week3.HW4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Person anne = new Person("Anne", 13);
@@ -10,8 +13,11 @@ public class Main {
         Rectangle rectangle = new Rectangle(20, 30);
         System.out.println("Perimeter: " + rectangle.getPerimeter() + ", Area: " + rectangle.getArea() + "\n");
 
-        Account accDetails = new Account("James", 981042);
-        Bank bankAccount = new Bank(accDetails, 0);
+        ArrayList<Account> accs = new ArrayList<>();
+        accs.add(new Account("James", 981042));
+        Bank bankAccount = new Bank(new ArrayList<Account>(
+                Arrays.asList(
+                        new Account("James", 981042))), 0);
         bankAccount.deposit(100);
         bankAccount.withdraw(10);
         System.out.println("Balance: " + bankAccount.getBalance());
