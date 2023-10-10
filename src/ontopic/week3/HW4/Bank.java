@@ -9,10 +9,12 @@ public class Bank {
         this.accounts = accounts;
         this.balance = balance;
     }
-    public void newAccount(String holderName, int accountID) {
-
+    public void addAccount(String holderName, int accountID) {
+        this.accounts.add(new Account(holderName, accountID));
     }
-
+    public void removeAccount(int accountID) {
+        System.out.println("Input the account ID of the account to delete");
+        for (int i;i<=)
     public List<Account> getAccounts() {
         return accounts;
     }
