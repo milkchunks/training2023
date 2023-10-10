@@ -1,0 +1,16 @@
+Static vs. Non-Static Methods:
+    Static methods are associated with a class itself. Non-static method are associated with an instance of the class
+    static call: getName(). non-static call: robot.getName() (like scanner.next())
+
+    static doesn't require you to make an instance (Robot.drive() is static, r.drive() is non-static)
+Constructors:
+    A 'method' that defines the inputs of your constructor when you define an instance of the class
+    NOTE: name and teamNumber are defined non-statically (like String name = "Bobert" outside of any methods)
+    Ex. A class constructor like public Robot(int teamNumber, String name) {this.teamNumber = teamNumber; this.name = name;}
+    The definition of an instance would look like: Robot r = new Robot (2046, "Polarity");
+
+    This would be used when instances of an object need to be used. If your robot has two arms with the same mechanics
+    but different measurements, you could create a class that operates the arm like any other arm, with the measurements
+    as the input (helps with scalability)
+
+    assigning the parameter to the global variable is very important for some reason but idk why

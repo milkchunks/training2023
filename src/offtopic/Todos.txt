@@ -1,6 +1,0 @@
-3. technically i should use a layout but i dont care
-4. global variables should technically have methods (like getter and setter or a method that clears text) but i don't care
-5. maybe use gridbaglayout? im not sure (bc it looks different on other computers i think
-6. wrap into exe in other repo and figure out how the hell pom.xml works
-7. add translating mode? idk
-8. Make user type in correct answer to move on like conjugugemos
