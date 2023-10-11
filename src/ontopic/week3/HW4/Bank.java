@@ -1,40 +1,36 @@
 package ontopic.week3.HW4;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Bank {
-    public double balance;
-    public List<Account> accounts;
-    public Bank (List<Account> accounts, double balance) {
+    public ArrayList<Account> accounts;
+    public Bank (ArrayList<Account> accounts) {
         this.accounts = accounts;
-        this.balance = balance;
     }
-    public void addAccount(String holderName, int accountID) {
-        this.accounts.add(new Account(holderName, accountID));
+    public void addAccount(String holderName, int accountID, double balance) {
+        this.accounts.add(new Account(holderName, accountID, balance));
     }
+
+    /**
+     * @param accountID the ID of the account to be deleted
+     */
     public void removeAccount(int accountID) {
-        System.out.println("Input the account ID of the account to delete");
-        for (int i;i<=)
-    public List<Account> getAccounts() {
+        for (int i = 0; i <= accounts.size(); i++) {
+            if (accountID == accounts.get(i).getAccountID()) {
+                accounts.remove(i);
+            }
+        }
+    }
+    public void removeAccount(Account account) {
+        accounts.remove(account);
+    }
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+    public ArrayList<Account> getAccounts() {
         return accounts;
     }
-
-    public void setAccounts(List<Account> accounts) {
+    public void setAccounts(ArrayList<Account> accounts) {
         this.accounts = accounts;
-    }
-
-    public void deposit(double amount) {
-        balance += amount;
-    }
-    public void withdraw(double amount) {
-        balance -= amount;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 }
