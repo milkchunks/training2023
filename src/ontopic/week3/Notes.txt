@@ -14,3 +14,6 @@ Constructors:
     as the input (helps with scalability)
 
     assigning the parameter to the global variable is very important for some reason but idk why
+
+
+Whatever is in the constructor in the class file will run on declaration
