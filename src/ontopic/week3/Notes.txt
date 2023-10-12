@@ -1,3 +1,6 @@
+IMPORTANT: DO NOT DEFINE A SCOPE FOR ANY CLASSES OR METHODS EXCEPT FOR main(). THIS MAKES IT MOSTLY PACKAGE PRIVATE
+UNLESS A CLASS FROM A DIFFERENT METHOD EXTENDS IT
+
 Static vs. Non-Static Methods:
     Static methods are associated with a class itself. Non-static method are associated with an instance of the class
     static call: getName(). non-static call: robot.getName() (like scanner.next())
@@ -17,3 +20,19 @@ Constructors:
 
 
 Whatever is in the constructor in the class file will run on declaration
+
+Polymorphism:
+    You can instantiate a subclass as a parent class
+
+Inheritance:
+    Child classes inherit fields and methods from parent class. @Override overrides the inherited method
+    The 'super' keyword denotes the field as the inherited field (e.g. if age belongs to Animal and color belongs to Cat,
+    you'd use super.age to set age, and this.color to set color)
+
+Interface:
+    Defines abstract method and non-abstract fields. These are by default public, static, and final. When implementing an
+    interface with abstract methods, you MUST define the method in the class with a constructor of the interface
+
+@Override:
+    Overrides the parent class's inherited method. (e.g. Animal.die() has different code than Dog.die() because @Override
+    overrode Animal's die() method with different code under the same name)
