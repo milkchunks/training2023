@@ -1,4 +1,4 @@
-package ontopic.week3.enums;
+package ontopic.week3.day2Notes;
 
 enum Enum {
     TEST(1),

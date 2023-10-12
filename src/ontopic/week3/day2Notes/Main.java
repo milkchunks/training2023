@@ -1,4 +1,4 @@
-package ontopic.week3.Polymorphism;
+package ontopic.week3.day2Notes;
 
 class Main {
     public static void main(String[] args) {

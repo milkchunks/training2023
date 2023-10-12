@@ -1,4 +1,4 @@
-package ontopic.week3.Polymorphism;
+package ontopic.week3.day2Notes;
 
 //subclass of Animal, takes age and hunger i think but adds breed
 class Dog extends Animal{

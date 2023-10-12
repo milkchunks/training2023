@@ -1,4 +1,4 @@
-package ontopic.week3.Polymorphism;
+package ontopic.week3.day2Notes;
 
 //subclass of animal, takes age and hunger but adds color
 class Cat extends Animal{

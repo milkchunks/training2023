@@ -1,4 +1,4 @@
-package ontopic.week3.enums;
+package ontopic.week3.day2Notes;
 
 public enum DogSound {
     GOLDEN("bark"),
