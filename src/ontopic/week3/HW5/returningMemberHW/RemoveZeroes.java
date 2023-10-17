@@ -13,7 +13,7 @@ class RemoveZeroes {
                 ++vowelCount;
             }
         }
-        return vowelCount;
+        return vowelCount / list.size();
     }
     static ArrayList<Integer> removeZeroes(ArrayList<Integer> list) {
         for (Integer elm : list) {
